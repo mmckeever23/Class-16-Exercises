@@ -7,17 +7,15 @@
             fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
                 response.json().then(function(json) {
                     const destination = document.getElementById("destination");
-                    destination.addEventListener("click", function(){
-                        destination.innerHTML = `
-                            <div>
-                                <h3>Planet ${json[0].name}</h3>
+                        destination.innerHTML += ` 
+                            <ul>
+                                <li>${json[0].name}</li>
                                 <img src=${json[0].image} height=250></img>
-                            </div>
+                            </ul>
                         `;
                     });
                 });
             });
-        });
       </script>
    </head>
    <body>
